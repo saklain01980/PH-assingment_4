@@ -97,3 +97,252 @@ body {
   font-weight: 500;
   color: #64748b;
 }
+
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  padding: 7px 20px;
+  font-size: 13px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  border: 1px solid #cbd5e1;
+  border-radius: 20px;
+  background-color: #ffffff;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+  background-color: #f1f5f9;
+}
+
+.tab-btn.active {
+  background-color: #1e3a5f;
+  color: #ffffff;
+  border-color: #1e3a5f;
+}
+
+
+.jobs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.job-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 22px 24px;
+  position: relative;
+}
+
+.job-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 4px;
+}
+
+.company-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #94a3b8;
+  font-size: 18px;
+  padding: 4px;
+  transition: color 0.2s;
+}
+
+.delete-btn:hover {
+  color: #ef4444;
+}
+
+.position {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 10px;
+}
+
+.job-meta {
+  font-size: 13px;
+  color: #94a3b8;
+  margin-bottom: 12px;
+}
+
+.job-meta span {
+  margin-right: 4px;
+}
+
+.job-meta span::after {
+  content: "•";
+  margin-left: 6px;
+}
+
+.job-meta span:last-child::after {
+  content: "";
+}
+
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.status-badge.not-applied {
+  background-color: #1e293b;
+  color: #ffffff;
+}
+
+.status-badge.interview {
+  background-color: #dcfce7;
+  color: #16a34a;
+  border: 1px solid #16a34a;
+}
+
+.status-badge.rejected {
+  background-color: #fee2e2;
+  color: #ef4444;
+  border: 1px solid #ef4444;
+}
+
+.description {
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.action-btn {
+  padding: 6px 18px;
+  font-size: 13px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.interview-btn {
+  background-color: #ffffff;
+  color: #16a34a;
+  border: 2px solid #16a34a;
+}
+
+.interview-btn:hover {
+  background-color: #dcfce7;
+}
+
+.interview-btn.selected {
+  background-color: #16a34a;
+  color: #ffffff;
+}
+
+.rejected-btn {
+  background-color: #ffffff;
+  color: #ef4444;
+  border: 2px solid #ef4444;
+}
+
+.rejected-btn:hover {
+  background-color: #fee2e2;
+}
+
+.rejected-btn.selected {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+
+.empty-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 16px;
+  opacity: 0.8;
+}
+
+.empty-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 6px;
+}
+
+.empty-subtitle {
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+
+.hidden {
+  display: none !important;
+}
+
+
+@media (max-width: 600px) {
+  .container {
+    padding: 20px 14px 40px;
+  }
+
+  .main-title {
+    font-size: 22px;
+  }
+
+  .dashboard {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .stat-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .stat-value {
+    font-size: 24px;
+  }
+
+  .job-card {
+    padding: 16px;
+  }
+
+  .company-name {
+    font-size: 15px;
+  }
+
+  .action-buttons {
+    flex-wrap: wrap;
+  }
+}
