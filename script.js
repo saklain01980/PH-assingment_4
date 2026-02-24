@@ -116,3 +116,21 @@ tabButtons.forEach(function (btn) {
         renderJobs();
     });
 });
+jobsContainer.addEventListener("click", function (e) {
+    var target = e.target;
+
+    
+    if (target.classList.contains("interview-btn")) {
+        var jobId = parseInt(target.getAttribute("data-id"));
+        var job = findJobById(jobId);
+        if (job) {
+        
+            if (job.status === "interview") {
+                return;
+            }
+            job.status = "interview";
+            updateDashboard();
+            renderJobs();
+        }
+    }
+    });
