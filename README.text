@@ -2,20 +2,20 @@
 1. Selectors  
 - getElementById: Grabs one specific thing by its ID.  
 - getElementsByClassName: Snags a bunch of things that all share the same class.  
-- querySelector & querySelectorAll: Honestly, just use these. You can use any CSS selector (like `.card > p`). `querySelector` gets the first match, `querySelectorAll` gets all of them. Pretty much everyone uses these now.
+- querySelector & querySelectorAll: Honestly, just use these. You can use any CSS selector (like .card > p). querySelector gets the first match, querySelectorAll gets all of them. Pretty much everyone uses these now.
 
 ---
 
 2. Creating & Adding Elements  
 It’s just three quick steps:  
-1. Make it: `let box = document.createElement('div');`  
-2. Add stuff: `box.innerText = "Hey!";`  
-3. Put it on the page: `document.body.append(box);`
+1. Make it: let box = document.createElement('div');  
+2. Add stuff: box.innerText = "Hey!";  
+3. Put it on the page: document.body.append(box);
 
 ---
 
 3. Event Bubbling  
-When you click something, the event doesn’t just stop there—it “bubbles” up through its parent elements. So if you click a button inside a `<div>`, the button’s click event fires, then the `<div>`’s, and so on, all the way up the page.
+When you click something, the event doesn’t just stop there—it “bubbles” up through its parent elements. So if you click a button inside a <div>, the button’s click event fires, then the <div>’s, and so on, all the way up the page.
 
 ---
 
