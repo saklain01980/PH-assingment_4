@@ -14,7 +14,7 @@ function createJobCard(job) {
     card.classList.add("job-card");
     card.setAttribute("data-id", job.id);
 
-   
+
     let badgeText = "NOT APPLIED";
     let badgeClass = "not-applied";
     if (job.status === "interview") {
@@ -24,7 +24,6 @@ function createJobCard(job) {
         badgeText = "REJECTED";
         badgeClass = "rejected";
     }
-
 
     card.innerHTML = `
     <div class="job-card-header">
@@ -48,7 +47,6 @@ function createJobCard(job) {
     return card;
 }
 
-
 function renderJobs() {
     jobsContainer.innerHTML = "";
 
@@ -65,8 +63,6 @@ function renderJobs() {
             return job.status === "rejected";
         });
     }
-
-  
     jobsCountEl.textContent = filtered.length + " Jobs";
 
     if (filtered.length === 0) {
@@ -83,14 +79,38 @@ function renderJobs() {
     }
 }
 
+function updateDashboard() {
+    totalCountEl.textContent = jobsData.length;
+
+    let interviewCount = 0;
+    let rejectedCount = 0;
+
+    for (let i = 0; i < jobsData.length; i++) {
+        if (jobsData[i].status === "interview") {
+            interviewCount++;
+        } else if (jobsData[i].status === "rejected") {
+            rejectedCount++;
+        }
+    }
+
+    interviewCountEl.textContent = interviewCount;
+    rejectedCountEl.textContent = rejectedCount;
+}
+
+function findJobById(id) {
+    for (let i = 0; i < jobsData.length; i++) {
+        if (jobsData[i].id === id) {
+            return jobsData[i];
+        }
+    }
+    return null;
+}
 
 tabButtons.forEach(function (btn) {
     btn.addEventListener("click", function () {
-    
         tabButtons.forEach(function (b) {
             b.classList.remove("active");
         });
-      
         btn.classList.add("active");
         activeTab = btn.getAttribute("data-tab");
         renderJobs();
