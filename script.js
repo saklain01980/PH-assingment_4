@@ -158,6 +158,7 @@ jobsContainer.addEventListener("click", function (e) {
         updateDashboard();
         renderJobs();
     }
+    
 });
 
 updateDashboard();
