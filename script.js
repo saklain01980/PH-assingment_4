@@ -133,4 +133,18 @@ jobsContainer.addEventListener("click", function (e) {
             renderJobs();
         }
     }
-    });
+    if (target.classList.contains("rejected-btn")) {
+        var jobId = parseInt(target.getAttribute("data-id"));
+        var job = findJobById(jobId);
+        if (job) {
+          
+            if (job.status === "rejected") {
+                return;
+            }
+            job.status = "rejected";
+            updateDashboard();
+            renderJobs();
+        }
+    }
+    
+ });
