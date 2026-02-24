@@ -63,7 +63,7 @@ function renderJobs() {
             return job.status === "rejected";
         });
     }
-    jobsCountEl.textContent = filtered.length + " Jobs";
+    jobsCountEl.textContent = filtered.length + " out of " + jobsData.length;
 
     if (filtered.length === 0) {
         jobsContainer.classList.add("hidden");
@@ -146,5 +146,19 @@ jobsContainer.addEventListener("click", function (e) {
             renderJobs();
         }
     }
+     if (target.classList.contains("delete-btn")) {
+        var jobId = parseInt(target.getAttribute("data-id"));
     
- });
+        for (let i = 0; i < jobsData.length; i++) {
+            if (jobsData[i].id === jobId) {
+                jobsData.splice(i, 1);
+                break;
+            }
+        }
+        updateDashboard();
+        renderJobs();
+    }
+});
+
+updateDashboard();
+renderJobs();
